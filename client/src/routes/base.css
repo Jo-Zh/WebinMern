@@ -1,0 +1,18 @@
+.backlay {
+  /* animation: scroll 20s linear infinite reverse; */
+  background-position: center;
+  background-size: cover;
+  color: #dedede;
+  z-index: -1;
+}
+@keyframes scroll {
+  0% {
+    background-position: 0% 0%;
+    /* transform: scale(1); */
+  }
+
+  100% {
+    /* transform: scale(1.2); */
+    background-position: -3000px 0px;
+  }
+}
