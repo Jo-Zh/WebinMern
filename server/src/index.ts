@@ -1,10 +1,30 @@
-import express, { Express, Request, Response } from "express";
+import Express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import ItemsModel from "./models/Items";
 
-const app: Express = express();
+const app: Express.Application = Express();
 const port = 8000;
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello");
+mongoose.connect("mongodb://localhost:27017/TradeItems");
+
+app.use(cors());
+
+app.post("/createItems", async (req, res) => {
+  const item = req.body;
+  const newItem = new ItemsModel(item);
+  await newItem.save();
+  res.json(newItem);
+});
+
+app.get("/getItems", (req, res) => {
+  ItemsModel.find({}, (err: any, result: any) => {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(result);
+    }
+  });
 });
 
 app.listen(port, () => {

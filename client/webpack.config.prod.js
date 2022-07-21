@@ -2,19 +2,20 @@
 const webpack = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-process.env.NODE_ENV = "production"; //define node environment
-// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpackBundleAnalyzer = require("webpack-bundle-analyzer");
-const { truncate } = require("fs");
+process.env.NODE_ENV = "production"; //define node environment
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// const { truncate } = require("fs");
 
 module.exports = {
-  mode: "producion",
+  mode: "production",
   target: "web",
-  devtool: "cheap-module-source-map",
+  devtool: "source-map",
   entry: "./src/index",
   output: {
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
     filename: "bundles.js",
-    path: path.resolve("/dist"),
   },
 
   devServer: {
