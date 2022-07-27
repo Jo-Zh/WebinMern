@@ -1,6 +1,7 @@
 // here tells you where to start
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 process.env.NODE_ENV = "development"; //define node environment
 
 module.exports = {
@@ -27,6 +28,7 @@ module.exports = {
       template: "public/index.html",
       favicon: "public/favicon.ico",
     }),
+    new MiniCssExtractPlugin(),
   ],
 
   module: {
@@ -37,8 +39,8 @@ module.exports = {
         loader: "ts-loader",
       },
       {
-        test: /(\.css)$/,
-        use: ["style-loader", "css-loader"],
+        test: /(\.css)$/i,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /(\.png|jpg|ico)$/,

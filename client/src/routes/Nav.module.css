@@ -1,0 +1,24 @@
+.nav {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+.nav ul {
+  display: flex;
+  width: 60%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: baseline;
+  list-style-type: none;
+  margin: 0;
+}
+.nav li {
+  /* text-decoration: none; */
+  color: rgb(135, 132, 132);
+  margin: 0 1rem;
+  padding: 0;
+}
+Link {
+  color: red;
+  text-decoration: none;
+}

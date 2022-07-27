@@ -1,12 +1,12 @@
 import React from "react";
 import { Outlet, NavLink, Link } from "react-router-dom";
-import "./base.css";
-import background from "./imges/bar-background.jpg";
+import Nav from "./Nav";
+import classes from "./Base.module.css";
 
 const Base = () => {
   return (
     <div>
-      <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
+      <nav className="navbar navbar-light bg-light navbar-expand-lg">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             Navbar
@@ -43,6 +43,7 @@ const Base = () => {
           </div>
         </div>
       </nav>
+      <Nav />
 
       <Outlet></Outlet>
     </div>

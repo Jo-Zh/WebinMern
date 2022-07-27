@@ -7,6 +7,7 @@
     "jsx": "react",
     "allowJs": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true //!!imported, This option brings the behavior of TypeScript in-line with Babel, where extra code is emitted to make using a default export of a module more ergonomic.
+    "allowSyntheticDefaultImports": true, //!!imported, This option brings the behavior of TypeScript in-line with Babel, where extra code is emitted to make using a default export of a module more ergonomic.
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   }
 }
