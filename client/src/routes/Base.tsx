@@ -6,8 +6,8 @@ import classes from "./Base.module.css";
 const Base = () => {
   return (
     <div>
-      <nav className="navbar navbar-light bg-light navbar-expand-lg">
-        <div className="container-fluid">
+      <nav className="navbar navbar-light bg-light navbar-expand-lg ">
+        <div className="container-fluid ">
           <Link className="navbar-brand" to="/">
             Navbar
           </Link>
@@ -23,21 +23,45 @@ const Base = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div
-            className="collapse navbar-collapse text-right"
+            className="nav justify-content-center collapse navbar-collapse text-left"
             id="navbarNavAltMarkup"
           >
-            <div className="navbar-nav ms-auto">
-              <Link className="nav-link active" aria-current="page" to="/">
-                Home
-              </Link>
-              <Link className="nav-link" to="/category">
-                Category
-              </Link>
+            <div className="navbar-item input-group w-50 mx-5">
+              <input
+                type="text"
+                className="form-control"
+                aria-label="Text input with dropdown button"
+              />
+              <div className="input-group-append">
+                <button
+                  className="btn btn-outline-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Category
+                </button>
+                <div className="dropdown-menu dropdown-menu-end">
+                  <a className="dropdown-item" href="#">
+                    Action
+                  </a>
+                  <a className="dropdown-item" href="#">
+                    Another action
+                  </a>
+                  <a className="dropdown-item" href="#">
+                    Something else here
+                  </a>
+                  <div role="separator" className="dropdown-divider"></div>
+                  <a className="dropdown-item" href="#">
+                    Separated link
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="navbar-item ">
               <Link className="nav-link" to="/sign-up">
-                Sign-Up
-              </Link>
-              <Link className="nav-link disabled" to="/">
-                Disabled
+                Sign up | Log in
               </Link>
             </div>
           </div>

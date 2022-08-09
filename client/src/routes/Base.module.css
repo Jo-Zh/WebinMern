@@ -4,6 +4,7 @@
   background-size: cover;
   color: #dedede;
   z-index: -1;
+  height: 60vh;
 }
 @keyframes scroll {
   0% {

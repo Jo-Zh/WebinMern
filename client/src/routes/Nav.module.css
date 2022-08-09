@@ -22,3 +22,6 @@ Link {
   color: red;
   text-decoration: none;
 }
+.card {
+  width: 18rem;
+}
